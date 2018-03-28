@@ -7,8 +7,8 @@ import { D3Service, D3_DIRECTIVES } from './d3';
 
 import { AppComponent } from './app.component';
 
-import { GraphComponent } from './visuals/graph/graph.component';
-import { SHARED_VISUALS } from './visuals/shared';
+import { GraphComponent } from './d3/visuals/graph/graph.component';
+import { SHARED_VISUALS } from './d3/visuals/shared';
 
 @NgModule({
   declarations: [

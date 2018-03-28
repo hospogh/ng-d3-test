@@ -1,13 +1,13 @@
-import { EventEmitter } from '@angular/core';
-import { Link } from './link';
-import { Node } from './node';
+import {EventEmitter} from '@angular/core';
+import {Link} from './link';
+import {Node} from './node';
 import * as d3 from 'd3';
 
 const FORCES = {
   LINKS: 1 / 50,
   COLLISION: 1,
   CHARGE: -1
-}
+};
 
 export class ForceDirectedGraph {
   public ticker: EventEmitter<d3.Simulation<Node, Link>> = new EventEmitter();
@@ -70,7 +70,10 @@ export class ForceDirectedGraph {
       this.simulation = d3.forceSimulation()
         .force('charge',
           d3.forceManyBody()
-            .strength(d => FORCES.CHARGE * d['r'])
+            .strength(node => {
+              // console.log(node);
+              return FORCES.CHARGE * node['r'];
+            })
         )
         .force('collide',
           d3.forceCollide()
