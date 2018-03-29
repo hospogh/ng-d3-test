@@ -6,10 +6,9 @@ import { D3Service, ForceDirectedGraph, Node } from '../../';
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <svg #svg [attr.width]="_options.width" [attr.height]="_options.height">
-      <g [zoomableOf]="svg">
+      <g>
         <g [linkVisual]="link" *ngFor="let link of links"></g>
-        <g [nodeVisual]="node" *ngFor="let node of nodes"
-            [draggableNode]="node" [draggableInGraph]="graph"></g>
+        <g [nodeVisual]="node" *ngFor="let node of nodes"></g>
       </g>
     </svg>
   `,

@@ -9,13 +9,15 @@ import { AppComponent } from './app.component';
 
 import { GraphComponent } from './d3/visuals/graph/graph.component';
 import { SHARED_VISUALS } from './d3/visuals/shared';
+import { TournametsComponent } from './tournamets/tournamets.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     GraphComponent,
     ...SHARED_VISUALS,
-    ...D3_DIRECTIVES
+    ...D3_DIRECTIVES,
+    TournametsComponent
   ],
   imports: [
     BrowserModule,

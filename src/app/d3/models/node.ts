@@ -9,16 +9,18 @@ export class Node implements d3.SimulationNodeDatum {
   vy?: number;
   fx?: number | null;
   fy?: number | null;
+  value: string | number;
 
-  id: string;
+  id: number;
   linkCount = 0;
 
-  constructor(id) {
+  constructor(id, value) {
     this.id = id;
+    this.value = value;
   }
 
   normal = () => {
-    return Math.sqrt(this.linkCount / APP_CONFIG.N);
+    return Math.sqrt(this.linkCount / APP_CONFIG.COUNT);
   };
 
   get r() {
@@ -26,11 +28,11 @@ export class Node implements d3.SimulationNodeDatum {
   }
 
   get fontSize() {
-    return (30 * this.normal() + 10) + 'px';
+    return 50;
   }
 
   get color() {
-    const index = Math.floor(APP_CONFIG.SPECTRUM.length * this.normal());
+    const index = Math.floor(APP_CONFIG.SPECTRUM.length * this.normal() + 4);
     return APP_CONFIG.SPECTRUM[index];
   }
 }

@@ -6,10 +6,11 @@ import { Link } from '../../../';
   template: `
     <svg:line
         class="link"
-        [attr.x1]="link.source.x"
-        [attr.y1]="link.source.y"
-        [attr.x2]="link.target.x"
-        [attr.y2]="link.target.y"
+        stroke-width="20"
+        [attr.x1]="link.source.x + link.source.r/2"
+        [attr.y1]="link.source.y + link.source.r/2"
+        [attr.x2]="link.target.x + link.target.r/2"
+        [attr.y2]="link.target.y + link.target.r/2"
     ></svg:line>
   `,
   styleUrls: ['./link-visual.component.css']
